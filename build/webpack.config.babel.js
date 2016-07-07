@@ -1,4 +1,5 @@
 import webpack from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   context: __dirname + '/../src',
@@ -17,5 +18,13 @@ export default {
         exclude: /node_modules/
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: './index.html',
+      inject: true,
+      hash: true,
+      chunks: ['app']
+    })
+  ]
 }
