@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 export default {
   context: __dirname + '/../src',
   entry: {
-    app: "./index.js"
+    app: "./index.jsx"
   },
   output: {
     filename: '[name].js',
@@ -13,7 +13,7 @@ export default {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx$/,
         loader: 'babel',
         exclude: /node_modules/
       }
@@ -22,6 +22,7 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       filename: './index.html',
+      template: './index.html',
       inject: true,
       hash: true,
       chunks: ['app']
