@@ -14,12 +14,12 @@ export default {
   module: {
     loaders: [
       {
-        test: /\.jsx$/,
+        test: /\.jsx$|\.js$/,
         loader: 'babel',
         exclude: /node_modules/
       },
       {
-        test: /\.css/,
+        test: /\.css$/,
         loader: ExtractTextWebpackPlugin.extract(
           'style',
           'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
