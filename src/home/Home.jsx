@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from "react-redux"
 
 import SearchBox from './SearchBox.jsx'
+import PackageInfo from './PackageInfo.jsx'
 
 export class Head extends React.Component {
   render() {
@@ -17,11 +18,9 @@ class Home extends React.Component {
     return <div>
       <Head/>
       <SearchBox/>
-
-      <pre>
-        {this.props.package.ready ? this.props.package.packagesInfo.Payload[0].TransferName : 'no data'}
-      </pre>
-
+      {
+        this.props.package.ready ? <PackageInfo package={this.props.package}/> : ''
+      }
     </div>
   }
 
